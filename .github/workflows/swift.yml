@@ -1,26 +1,27 @@
-# This workflow will build a Swift project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
-
-name: Swift
+name: iOS Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
   build:
-
-    runs-on: macos-latest
-
+    runs-on: macOS-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: "Carthage Bootstrap"
-      uses: olejnjak/carthage-workaround@v1
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Install Xcode
+      uses: actions/setup-xcode@v2
       with:
-        action: bootstrap --platform iOS  --use-xcframeworks --cache-builds
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
+        xcode-version: '12.x' # replace with your desired Xcode version
+    - name: Install Carthage
+      run: |
+        brew install carthage
+    - name: Install dependencies
+      run: |
+        carthage bootstrap --platform iOS
+        pod install
+    - name: Build app
+      run: xcodebuild -project Turg.xcodeproj -scheme TurfTests -destination 'platform=iOS Simulator,name=iPhone 12' build
