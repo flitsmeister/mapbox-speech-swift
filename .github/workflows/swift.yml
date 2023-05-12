@@ -24,4 +24,4 @@ jobs:
         carthage bootstrap --platform iOS
         pod install
     - name: Build app
-      run: xcodebuild -project Turg.xcodeproj -scheme TurfTests -destination 'platform=iOS Simulator,name=iPhone 12' build
+      run: xcodebuild -project MapboxSpeech.xcodeproj -scheme MapboxSpeechTests -destination 'platform=iOS Simulator,name=iPhone 12' build
