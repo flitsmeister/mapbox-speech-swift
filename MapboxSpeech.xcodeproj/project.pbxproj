@@ -424,6 +424,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = MapboxSpeechTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Mapbox.MapboxSpeechTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -445,6 +446,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = MapboxSpeechTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Mapbox.MapboxSpeechTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
